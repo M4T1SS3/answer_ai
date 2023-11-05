@@ -19,12 +19,13 @@ const SignIn = () => {
       password,
     });
     
-    if (result != null) {
-      router.push('/menu')
-    } else {
+    if (result && result.error) {
       setError(result.error);
+    } else {
+      // If there's no error, navigate to the menu
+      router.push('/menu');
     }
-  };
+  }
 
   return (
     <section className="min-h-screen flex items-center justify-center flex-col">
