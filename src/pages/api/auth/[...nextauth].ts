@@ -20,27 +20,27 @@ export default NextAuth({
         password: { label: "Password", type: "password" }
       },
   async authorize(credentials) {
-        if (!credentials) {
-          console.error('Credentials are undefined');
-          return null;
-        }
+      if (!credentials) {
+        console.error('Credentials are undefined');
+        return null;
+      }
 
-        // Now TypeScript knows credentials is not undefined
-        const { data, error } = await supabase
-          .from('users')
-          .select('id, email, hashed_password')
-          .eq('email', credentials.email)
-          .single();
+      // Now TypeScript knows credentials is not undefined
+      const { data, error } = await supabase
+        .from('users')
+        .select('id, email, hashed_password')
+        .eq('email', credentials.email)
+        .single();
 
-        if (error) {
-          console.error('Error retrieving user:', error);
-          return null;
-        }
+      if (error) {
+        console.error('Error retrieving user:', error);
+        return null;
+      }
 
-        if (!data) {
-          console.error('No user found');
-          return null;
-        }
+      if (!data) {
+        console.error('No user found');
+        return null;
+      }
 
         // Compare the provided password with the hashed password
         const isValid = await bcrypt.compare(credentials.password, data.hashed_password);
@@ -59,22 +59,22 @@ export default NextAuth({
   session: {
     strategy: "jwt"
   },
-  callbacks: {
-    async jwt({ token, user }) {
-      // Add user id to the JWT token
-      if (user) {
-        token.id = user.id;
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      // Add user id to the session
-      if (token) {
-        session.id = token.id;
-      }
-      return session;
-    }
-  },
+  // callbacks: {
+  //   async jwt({ token, user }) {
+  //     // Add user id to the JWT token
+  //     if (user) {
+  //       token.id = user.id;
+  //     }
+  //     return token;
+  //   },
+  //   async session({ session, token }) {
+  //     // Add user id to the session
+  //     if (token) {
+  //       session.id = token.id;
+  //     }
+  //     return session;
+  //   }
+  // },
   pages: {
     signIn: '/signin', // Custom sign-in page
   }
