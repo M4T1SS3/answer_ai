@@ -46,7 +46,6 @@ const MenuItem: React.FC<MenuItemProps> = ({ href, text, iconPaths, iconCircle }
                     <h2 className="text-black uppercase text-2xl">
                         {text}
                     </h2>
-                    <p className="text-[#000] opacity-40 mt-2 text-sm">Here's a brief description of the {text} feature.</p>
                 </div>
             </a>    
         </li>
