@@ -1,4 +1,4 @@
-
+'use client'
 
 export default function FeatureMenu() {
 
@@ -42,7 +42,6 @@ const MenuItem: React.FC<MenuItemProps> = ({ href, text, iconPaths, iconCircle }
                     </svg>
                 </div>
 
-                {/* Text Container */}
                 <div className="">
                     <h2 className="text-black uppercase text-2xl">
                         {text}
