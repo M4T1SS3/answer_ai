@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --border-radius: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg1: #fff;
+    --bg2: #121212;
+    --scrollbar-bg: #2D2D2D;
+    --scrollbar-thumb: #555;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --scrollbar-bg: #D6D6D6;
+    --scrollbar-thumb: #A0A0A0;
+  }
+}
+
+body {
+  background-color: var(--bg1);
+}
+
+/* Elegant Scrollbar styles */
+::-webkit-scrollbar {
+    width: 10px; 
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg); 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb); 
+    border-radius: 10px; 
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+}
