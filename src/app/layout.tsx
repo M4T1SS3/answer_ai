@@ -2,10 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../globals.css';
 import Navigation from '@/components/Navigation';
-import Providers from "./Providers";
 
 const inter = Inter({ subsets: ['latin'] });
-import { SessionProvider } from "next-auth/react"
 
 export const metadata: Metadata = {
   title: 'Create Next App',
