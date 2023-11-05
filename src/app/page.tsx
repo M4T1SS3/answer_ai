@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router'; // Corrected import
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
   const [dataUploaded, setDataUploaded] = useState(false);
