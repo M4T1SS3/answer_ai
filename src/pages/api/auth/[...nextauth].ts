@@ -20,19 +20,25 @@ export default NextAuth({
         password: { label: "Password", type: "password" }
       },
   async authorize(credentials) {
-        // if (!credentials || !credentials.email || !credentials.password) {
-        //   return null;
-        // }
-        console.log("⛄", credentials)
-        // Query the database for the user with the provided email
-        const { data} = await supabase
+        if (!credentials) {
+          console.error('Credentials are undefined');
+          return null;
+        }
+
+        // Now TypeScript knows credentials is not undefined
+        const { data, error } = await supabase
           .from('users')
           .select('id, email, hashed_password')
           .eq('email', credentials.email)
           .single();
 
-        if (!data) {
+        if (error) {
           console.error('Error retrieving user:', error);
+          return null;
+        }
+
+        if (!data) {
+          console.error('No user found');
           return null;
         }
 
