@@ -20,7 +20,8 @@ const SignIn = () => {
     });
     
     if (result != null) {
-      setError(result.error);
+      // If result.error is null, it will default to the string provided
+      setError(result.error || 'An unknown error occurred');
     } else {
       router.push('/menu')
     }
