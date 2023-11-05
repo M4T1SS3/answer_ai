@@ -19,8 +19,7 @@ const SignIn = () => {
       password,
     });
     
-    console.log(result)
-    if (result.error) {
+    if (result != null) {
       setError(result.error);
     } else {
       router.push('/menu')
