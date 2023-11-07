@@ -114,7 +114,8 @@ async function generateResponse(query: string, similarQuestions: SimilarQuestion
     template: `
       You are a customer support representative representing {writer_name} at {organisation_name}, a company specializing in {activity}.
       Answer in the language of the question.
-      Answer friendly.
+      Answer friendly and clear.
+      Aim to help and inform, not to sell.
       Below is a message I received from a customer:
       {message}
       

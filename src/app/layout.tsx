@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
       </head>
-      <body className="overflow-hidden">
+      <body className="overflow-x-hidden">
         <Navigation/>
       {children}
       </body>

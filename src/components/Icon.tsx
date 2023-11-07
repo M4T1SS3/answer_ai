@@ -7,7 +7,8 @@ export enum IconType {
   Delete,
   Smile,
   Send,
-  Check
+  Check,
+  GoBack, 
 }
 
 interface IconProps {
@@ -71,6 +72,12 @@ const Icon: React.FC<IconProps> = ({ type,  onClick}) => {
             <svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M5 13l4 4L19 7"></path>
             </svg>
+        );
+        case IconType.GoBack:
+        return (
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M21 11H6.414l5.293-5.293-1.414-1.414L3.586 12l6.707 6.707 1.414-1.414L6.414 13H21v-2z"/>
+          </svg>
         );
       default:
         return null;

@@ -12,6 +12,8 @@ import Smile from '../../assets/icons/smile.svg'
 export default function QuestionAnswerComponent() {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
+  const [originalAnswer, setOriginalAnswer] = useState(''); // State to hold the original answer
+  const [enhanced, setEnhanced] = useState(false);
   const [hasCopied, setHasCopied] = useState(false); 
   const [loading, setLoading] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
@@ -54,6 +56,7 @@ const handleQuestionSubmit = async () => {
 const handleEnhanceAnswer = async () => {
   if (!question || !answer || question.trim() === '' || answer.trim() === '') return;
   setLoading(true);
+  setOriginalAnswer(answer);
   try {
       const response = await fetch(API_URL[1] + '/enhance', {
           method: 'POST',
@@ -68,7 +71,8 @@ const handleEnhanceAnswer = async () => {
       let data = await response.text();
   
   
-      setAnswer(data); // Assuming the API returns a field named 'enhancedAnswer'
+      setAnswer(data);
+      setEnhanced(true);
 
   } catch (error) {
       console.error('Error:', error);
@@ -76,6 +80,10 @@ const handleEnhanceAnswer = async () => {
   } finally {
       setLoading(false);
   }
+};
+const handleGoBackToOriginal = () => {
+  setAnswer(originalAnswer); // Revert to the original answer
+  setEnhanced(false); // Update the state to indicate the answer is not enhanced
 };
 
   const copyToClipboard = async (text: string) => {
@@ -139,7 +147,11 @@ const handleEnhanceAnswer = async () => {
                 </div>
                 <div className='flex justify-center gap-x-1'>
                       <Icon type={IconType.Save} onClick={handleSave}/>
-                      <Icon type={IconType.Magic} onClick={handleEnhanceAnswer}/>
+                      {enhanced ? (
+                        <Icon type={IconType.GoBack} onClick={handleGoBackToOriginal}/>
+                      ) : (
+                        <Icon type={IconType.Magic} onClick={handleEnhanceAnswer}/>
+                      )}
                       {hasCopied ? (
                           <Icon type={IconType.Check}/>
                       ) : (

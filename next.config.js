@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // Your regular Next.js configuration options here
-    // For example, enabling React strict mode:
-    reactStrictMode: true,
-  };
-  
-  module.exports = nextConfig;
-  
+  reactStrictMode: true,
+  i18n: {
+    locales: ['en-US', 'de'],
+    defaultLocale: 'en-US',
+  },
+};
+
+module.exports = nextConfig;

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import BackButton from './BackButton';
+import { useRouter } from 'next/router';
 
 type LinkItemType = {
     href: string;
@@ -7,6 +8,22 @@ type LinkItemType = {
 };
 
 function LinkItem({ href, label }: LinkItemType) {
+
+    // const { locale } = useRouter();
+    // const translationMap = {
+    //   'en-US': {
+    //     'Go Back': 'Go Back',
+    //     'Ask A Question': 'Ask A Question',
+    //     'Knowledge Base': 'Knowledge Base',
+    //   },
+    //   'de': {
+    //     'Go Back': 'Zurück',
+    //     'Ask A Question': 'Frage stellen',
+    //     'Knowledge Base': 'Wissensdatenbank',
+    //   },
+    // };
+
+    // const translatedLabel = translationMap[locale][label];
     return (
         <Link href={href}>
            <span className="text-[#000] text-md cursor-pointer underline-offset-2 underline uppercase">
