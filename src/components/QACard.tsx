@@ -5,9 +5,10 @@ import Icon, { IconType } from '@/components/Icon'; // Adjust the import path as
 type QACardProps = {
     pair: QAPair;
     onEdit: (pair: QAPair) => void;
+    key: number
 };
 
-const QACard: React.FC<QACardProps> = ({ pair, onEdit }) => {
+const QACard: React.FC<QACardProps> = ({ pair, onEdit,key }) => {
     const [copied, setCopied] = useState(false);
 
     const handleCopyToClipboard = async (text: string) => {
@@ -21,7 +22,7 @@ const QACard: React.FC<QACardProps> = ({ pair, onEdit }) => {
     };
 
     return (
-        <li className="bg-gray-200 rounded-lg p-4 my-2 w-56 h-56 relative flex flex-col justify-end">
+        <li key={key} className="bg-gray-200 rounded-lg p-4 my-2 w-56 h-56 relative flex flex-col justify-end">
             <button className="absolute top-0 right-0 p-2" onClick={() => onEdit(pair)}>
                 <span>•••</span>
             </button>

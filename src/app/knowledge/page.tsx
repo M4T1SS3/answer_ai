@@ -169,7 +169,7 @@ export default function KnowledgeBase() {
                 <div className="w-full flex justify-center">
                 <ul className="flex flex-wrap gap-x-2">
                     {pairs.map((pair, index) => (
-                            <QACard pair={pair} onEdit={handleEditPair} />
+                            <QACard pair={pair} key={index} onEdit={handleEditPair} />
                     ))}
                 </ul>
                 </div>
