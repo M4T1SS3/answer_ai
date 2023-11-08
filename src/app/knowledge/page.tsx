@@ -166,12 +166,13 @@ export default function KnowledgeBase() {
                         />
                 
                 )}
-
-            <ul className=" px-48 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 w-full">
-                {pairs.map((pair, index) => (
-                    pair && <QACard key={pair.id} pair={pair} onEdit={handleEditPair} />
-                ))}
-            </ul>
+                <div className="w-full flex justify-center">
+                <ul className="flex flex-wrap gap-x-2">
+                    {pairs.map((pair, index) => (
+                            <QACard pair={pair} onEdit={handleEditPair} />
+                    ))}
+                </ul>
+                </div>
             
 
             </main>

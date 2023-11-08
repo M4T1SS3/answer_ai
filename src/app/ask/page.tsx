@@ -18,6 +18,11 @@ export default function QuestionAnswerComponent() {
   const [loading, setLoading] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
 
+  //wenn es sich verändert soll der back button weg
+  //cards grid
+  //when clickick it shoudld also open
+  //make response shorter
+
 
 useEffect(() => {
     let timeoutId: NodeJS.Timeout;

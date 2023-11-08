@@ -60,14 +60,17 @@ async function enhanceAnswer(question: string, answer: string, context: any): Pr
       openAIApiKey: process.env.NEXT_PUBLIC_OPEN_AI,
       modelName: "gpt-3.5-turbo-16k-0613"
     });
-  
+    console.log(answer)
     const promptTemplate = new PromptTemplate({
       template: `
-        You are a customer support representative at {organisation_name}, a company specializing in {activity}.
-        Here is a question from a customer: "{question}"
-        My initial answer was: "{initialAnswer}"
+        You are a customer support bot at {organisation_name}, specializing in {activity}.
+        Answer in the language of the question.
+        Answer friendly and concise.
+
+        Customer's question: "{question}"
+        My initial response was: "{initialAnswer}"
         
-        Please answer the customer with and enhanced message.
+        Please follow the content of my response answer with an enhanced version of the initial response.
       `,
       inputVariables: ['question', 'initialAnswer', 'organisation_name', 'activity'],
     });
