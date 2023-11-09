@@ -37,11 +37,11 @@ export default function Navigation() {
     return (
             <nav className="flex items-center justify-between w-full py-4 px-6 bg-gray-200">
                 <div className="flex-grow-0">
-                    <LinkItem href="/menu" label="Go Back" />
+                    <LinkItem href="/menu" label="Zurück" />
                 </div>
                 <div className="flex-grow flex justify-center gap-x-4">
-                    <LinkItem href="/ask" label="Ask A Question" />
-                    <LinkItem href="/knowledge" label="Knowledge Base" />
+                    <LinkItem href="/ask" label="Frage stellen" />
+                    <LinkItem href="/knowledge" label="Wissensbank" />
                 </div>
                 <div className="flex-grow-0">
                 </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import QAPair from '@/types/types';
+import Icon, { IconType } from './Icon';
 
 interface QAFormProps {
     onSubmit: (question: string, answer: string) => void;
@@ -37,12 +38,10 @@ const QAForm: React.FC<QAFormProps> = ({pair, onSubmit, onGoBack, onDelete }) =>
         <div className='bg-white rounded-md p-4 w-1/2'>
             <div className='flex flex-row justify-between'>
                 {pair && onDelete && (
-                    <div className='uppercase underline underline-offset-2 cursor-pointer' onClick={() => onDelete(pair)}>
-                            Delete
-                    </div>
+                    <Icon type={IconType.Delete} onClick={() => onDelete(pair)}/>
                 )}
-
-                <div onClick={onGoBack}className='uppercase underline underline-offset-2 cursor-pointer'>CLOSE</div>
+                 <Icon type={IconType.Close} onClick={onGoBack}/>
+                 
             </div>
             <h2 className='text-2xl mt-10 mb-4'>Add Question to Knowledgebase</h2>
             <form onSubmit={handleSubmit} className=''>

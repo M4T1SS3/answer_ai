@@ -59,22 +59,15 @@ export default NextAuth({
   session: {
     strategy: "jwt"
   },
-  // callbacks: {
-  //   async jwt({ token, user }) {
-  //     // Add user id to the JWT token
-  //     if (user) {
-  //       token.id = user.id;
-  //     }
-  //     return token;
-  //   },
-  //   async session({ session, token }) {
-  //     // Add user id to the session
-  //     if (token) {
-  //       session.id = token.id;
-  //     }
-  //     return session;
-  //   }
-  // },
+  callbacks: {
+    async jwt({ token, user }) {
+      // Add user id to the JWT token
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    }
+  },
   pages: {
     signIn: '/signin', // Custom sign-in page
   }

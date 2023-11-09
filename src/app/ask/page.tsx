@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import API_URL from '@/constants';
 import ChatBox from '@/components/ChatBox';
 import Icon, { IconType } from '@/components/Icon';
@@ -7,6 +8,8 @@ import QAForm from '@/components/QAForm';
 import Image from 'next/image';
 
 import Smile from '../../assets/icons/smile.svg'
+import { signIn, useSession } from 'next-auth/react';
+import { data } from 'autoprefixer';
 
 
 export default function QuestionAnswerComponent() {
@@ -18,12 +21,15 @@ export default function QuestionAnswerComponent() {
   const [loading, setLoading] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
 
-  //wenn es sich verändert soll der back button weg
-  //cards grid
-  //when clickick it shoudld also open
-  //make response shorter
+  const router = useRouter();
+  const { data: session, status } = useSession({
+    required: true,
+    onUnauthenticated() {
+      router.push('/signin');
+    },
+  });
 
-
+    
 useEffect(() => {
     let timeoutId: NodeJS.Timeout;
     if (hasCopied) {
@@ -169,7 +175,7 @@ const handleGoBackToOriginal = () => {
                 className='w-full p-2 h-full text-sm bg-transparent border-none outline-none resize-none'
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
-                placeholder='Generated answer...'
+                placeholder='Hier kommt die Antwort, oder deine Stichpunkte'
                 rows={11}
             />
 

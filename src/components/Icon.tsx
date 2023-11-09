@@ -8,7 +8,8 @@ export enum IconType {
   Smile,
   Send,
   Check,
-  GoBack, 
+  GoBack,
+  Close
 }
 
 interface IconProps {
@@ -41,15 +42,12 @@ const Icon: React.FC<IconProps> = ({ type,  onClick}) => {
                     <path d="M16,8 L18,14 L22,16 L18,18 L16,24 L14,18 L10,16 L14,14 L16,8" fill="currentColor"/>
                 </svg>
             );
-        
       case IconType.Delete:
         return (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M5 11h14v2H5z"/>
-            <path d="M15 4h-2v2H7v2h10V6h-2V4z"/>
-            <path d="M19 9H5c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zm0 10H5v-8h14v8z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3zM5 8h14l-1 13H6L5 8zm2.5 2a.5.5 0 0 1 1 0v9a.5.5 0 1 1-1 0v-9zm3 0a.5.5 0 1 1 1 0v9a.5.5 0 1 1-1 0v-9zm3 0a.5.5 0 1 1 1 0v9a.5.5 0 1 1-1 0v-9z"/>
+            <path d="M16 4h-4V3h4v1z"/>
           </svg>
-          
         );
       case IconType.Send:
         return (
@@ -79,6 +77,13 @@ const Icon: React.FC<IconProps> = ({ type,  onClick}) => {
             <path d="M21 11H6.414l5.293-5.293-1.414-1.414L3.586 12l6.707 6.707 1.414-1.414L6.414 13H21v-2z"/>
           </svg>
         );
+        
+      case IconType.Close: // Added Close icon case
+      return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
       default:
         return null;
     }

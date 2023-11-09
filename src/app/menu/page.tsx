@@ -1,6 +1,16 @@
 'use client'
 
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+
 export default function FeatureMenu() {
+    const router = useRouter();
+    const { data: session, status } = useSession({
+      required: true,
+      onUnauthenticated() {
+        router.push('/signin');
+      },
+    });
 
    
     return (
@@ -9,12 +19,12 @@ export default function FeatureMenu() {
                 <ul className="flex flex-row space-x-4 p-6 rounded-md">
                     <MenuItem
                         href="/knowledge"
-                        text="Knowledge Base"
+                        text="Wissensbank"
                         iconPaths="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2zM16 3H8a5 5 0 000 10h8a5 5 0 100-10z"
                     />
                     <MenuItem
                         href="/ask"
-                        text="Ask a Question"
+                        text="Frage stellen"
                         iconPaths="M3 3v18h18V3H3zm3 3h12v12H6V6zm2 2v8h8V8H8z"
                     />
                 </ul>

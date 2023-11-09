@@ -6,6 +6,8 @@ import QACard from "@/components/QACard";
 import QAPair from "@/types/types";
 
 import API_URL from "@/constants";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 
 
@@ -14,6 +16,14 @@ export default function KnowledgeBase() {
     let [pairs, setPairs] = useState<QAPair[]>([]);
     let [openForm, setOpenForm] = useState(false)
     const [editPair, setEditPair] = useState<QAPair | null>(null);
+
+    const router = useRouter();
+    const { data: session, status } = useSession({
+      required: true,
+      onUnauthenticated() {
+        router.push('/signin');
+      },
+    });
 
     
 

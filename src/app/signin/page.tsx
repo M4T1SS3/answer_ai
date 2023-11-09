@@ -18,6 +18,7 @@ const SignIn = () => {
       email,
       password,
     });
+    console.log(result)
     
     if (result && result.error) {
       setError(result.error);

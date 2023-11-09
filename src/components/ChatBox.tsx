@@ -46,7 +46,7 @@ const ChatBox: React.FC<SearchBoxProps> = ({ inputValue, onInputChange, onSend, 
             onSend();
           }
         }}
-        placeholder="Type your message..."
+        placeholder="Schreibe deine Frage"
       />
       <div className='grid place-content-end'>
       <div className="w-10 h-10 grid place-items-center rounded-lg cursor-pointer bg-[#000000] text-white" >
