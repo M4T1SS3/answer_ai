@@ -146,7 +146,7 @@ const handleGoBackToOriginal = () => {
 
   return (
     <main className='grid place-items-center w-screen h-screen'>
-    <section className="p-4 w-3/6">
+   <section className="p-4 md:w-3/6 w-full h-full md:h-auto">
         <div className="mb-4 p-2 bg-gray-200 rounded-md flex flex-col justify-between">
             <div className='flex flex-row justify-end'>
               {/* <div className='rounded-full bg-[#7F53FF] h-10 w-10 grid place-items-center p-1'>
@@ -180,12 +180,14 @@ const handleGoBackToOriginal = () => {
             />
 
         </div>
+        <div className="w-full">
         <ChatBox
             inputValue={question}
             onInputChange={setQuestion}
             onSend={handleQuestionSubmit}
             isLoading={loading}
         />
+        </div>
     </section>
     {isFormVisible && (
         <QAForm

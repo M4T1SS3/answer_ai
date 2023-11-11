@@ -27,7 +27,7 @@ function LinkItem({ href, label }: LinkItemType) {
 
     return (
         <Link href={href}>
-           <span className="text-[#000] text-md cursor-pointer underline-offset-2 underline uppercase">
+           <span className="text-[#000] text-sm md:text-md cursor-pointer underline-offset-2 underline uppercase">
                 {translatedLabel}
             </span>
         </Link>
@@ -37,9 +37,9 @@ function LinkItem({ href, label }: LinkItemType) {
 export default function Navigation() {
     return (
             <nav className="flex items-center justify-between w-full py-4 px-6 bg-gray-200">
-                <div className="flex-grow-0">
+                {/* <div className="flex-grow-0">
                     <LinkItem href="/menu" label="Go Back" />
-                </div>
+                </div> */}
                 <div className="flex-grow flex justify-center gap-x-4">
                     <LinkItem href="/ask" label="Ask A Question" />
                     <LinkItem href="/knowledge" label="Knowledge Base" />
