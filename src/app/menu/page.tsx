@@ -11,7 +11,7 @@ export default function FeatureMenu() {
         router.push('/signin');
       },
     });
-
+    
    
     return (
         <main className="relative w-screen h-screen grid place-items-center">
@@ -43,6 +43,20 @@ interface MenuItemProps {
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({ href, text, iconPaths, iconCircle }) => {
+    const locale = "de";
+    const translationMap: {[key: string]: {[key: string]: string}} = {
+        'en-US': {
+            'Wissensbank': 'Knowledge Base',
+            'Frage stellen': 'Ask A Question',
+        },
+        'de': {
+            'Wissensbank': 'Wissensbank',
+            'Frage stellen': 'Frage stellen',
+        },
+    };
+
+    const translatedText = translationMap[locale][text]; 
+    
     return (
         <li className="bg-gray-200 p-2 w-[216px] h-[336px] rounded-md relative">
             <a href={href} className="grid place-items-end space-x-2 h-full">
@@ -54,7 +68,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ href, text, iconPaths, iconCircle }
 
                 <div className="">
                     <h2 className="text-black uppercase text-2xl">
-                        {text}
+                    {translatedText}
                     </h2>
                 </div>
             </a>    

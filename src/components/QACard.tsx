@@ -34,7 +34,7 @@ const QACard: React.FC<QACardProps> = ({ pair, onEdit,key }) => {
                 )}
             </button>
             <div className="text-left">
-                <h3 className="line-clamp-3">{pair.question}</h3>
+                <h3 className="line-clamp-3 mb-2 font-medium">{pair.question}</h3>
                 <p className='text-sm opacity-40 line-clamp-2'>{pair.answer}</p>
             </div>
         </li>

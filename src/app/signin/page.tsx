@@ -30,7 +30,7 @@ const SignIn = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center flex-col">
-        <div className="relative inline-block">
+        <div className="relative inline-block mb-8">
             <h1 className='text-3xl uppercase relative z-10'>Sign IN</h1>
             <div className='absolute top-1/2 transform w-full h-6 bg-[#7F53FF] z-0'></div>
         </div>
@@ -64,7 +64,7 @@ const SignIn = () => {
         <div className="flex items-center justify-between">
           <button
             type="submit"
-            className="bg-black w-full text-white  py-2 px-4 rounded grid place-items-center"
+            className="bg-black w-full text-white  h-12 rounded grid place-items-center"
           >
             Sign In
           </button>

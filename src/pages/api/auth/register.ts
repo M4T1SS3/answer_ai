@@ -66,6 +66,7 @@ export default async function register(req: NextApiRequest, res: NextApiResponse
     // Hash the password
     const hashedPassword = bcrypt.hashSync(password, 10);
     console.log("⛄⛄🦄🦄🦄")
+    console.log(hashedPassword)
 
     // Insert the new user into the database
     const { data, error } = await supabase.from('users').insert([
