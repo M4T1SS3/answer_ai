@@ -4,6 +4,7 @@ import { HfInference } from '@huggingface/inference';
 import { PromptTemplate } from 'langchain/prompts';
 import { LLMChain } from 'langchain/chains';
 import { ChatOpenAI } from 'langchain/chat_models/openai';
+import { data } from 'autoprefixer';
 
 // Initialize Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -89,13 +90,11 @@ async function generateResponse(query: string, similarQuestions: SimilarQuestion
   const { data: userData, error } = await supabase
     .from('users')
     .select('organisation_name, activity, writer_name')
-    .eq('id', 1)
+    .eq('id', 5)
     .single();
-
   if (error) {
     throw new Error('Failed to fetch user context from Supabase');
   }
-
   // Assuming userData is not null and contains the required fields
   const context = {
     organisation_name: userData.organisation_name,
@@ -126,7 +125,6 @@ async function generateResponse(query: string, similarQuestions: SimilarQuestion
   });
 
   // Prepare the inputs for the chain
-  console.log(similarQuestions.map(q => q.answer).join('\n'))
   const chainInputs = {
     message: query,
     best_practice: similarQuestions.map(q => `Q: ${q.question}\nA: ${q.answer}`).join('\n\n'),

@@ -44,9 +44,7 @@ export default NextAuth({
 
         // Compare the provided password with the hashed password
         const isValid = await bcrypt.compare(credentials.password, data.hashed_password);
-        console.log("⛄",isValid)
         if (isValid) {
-          console.log(data.id)
           // Return only the necessary user information for the session
           return { id: data.id, email: data.email };
         } else {

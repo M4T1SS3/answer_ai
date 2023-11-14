@@ -41,7 +41,6 @@ export default function UploadData({ setDataUploaded }: UploadDataProps) {
         if (detectedFileType === 'json') {
           try {
             const jsonData = JSON.parse(content);
-            console.log(jsonData)
             sendDataToAPI(jsonData);
           } catch {
             console.warn('Error parsing JSON.');
@@ -69,7 +68,6 @@ export default function UploadData({ setDataUploaded }: UploadDataProps) {
       const responseData = await response.json();
   
       if (response.ok) {
-        console.log('Data uploaded successfully:', responseData);
         setDataUploaded(true)
       } else {
         console.warn('API Error:', responseData);

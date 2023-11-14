@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const { data: userData, error } = await supabase
         .from('users')
         .select('organisation_name, activity, writer_name')
-        .eq('id', 1) // Assuming you want to fetch the context for a specific user ID
+        .eq('id', 5) // Assuming you want to fetch the context for a specific user ID
         .single();
 
       if (error) {
@@ -60,7 +60,6 @@ async function enhanceAnswer(question: string, answer: string, context: any): Pr
       openAIApiKey: process.env.NEXT_PUBLIC_OPEN_AI,
       modelName: "gpt-3.5-turbo-16k-0613"
     });
-    console.log(answer)
     const promptTemplate = new PromptTemplate({
       template: `
         You are a customer support bot at {organisation_name}, specializing in {activity}.

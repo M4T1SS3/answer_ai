@@ -50,10 +50,8 @@ const handleQuestionSubmit = async () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query: question })
     });
-
     if (!response.ok) throw new Error('Response not okay');
     const data = await response.text();
-    console.log(data)
     setAnswer(data);
 
   } catch (error) {
@@ -107,12 +105,10 @@ const handleGoBackToOriginal = () => {
   };
 
   const handleSave = () => {
-    console.log("Save functionality - Opening form with current QA");
     setIsFormVisible(true); // Show the form
   };
 
   const handleSubmit = async () => {
-    console.log("Submitting QA to knowledge base:", question, answer);
 
     try {
         const response = await fetch(API_URL[1] + '/add-pair', {
@@ -124,7 +120,6 @@ const handleGoBackToOriginal = () => {
         if (!response.ok) throw new Error('Response not okay');
 
         const data = await response.json();
-        console.log("Response from server: ", data.message);
         // Show a success message or perform other actions as needed
     } catch (error) {
         console.error('Error while saving to knowledge base:', error);
@@ -141,7 +136,6 @@ const handleGoBackToOriginal = () => {
     setIsFormVisible(false); // Hide the form without saving
   };
 
-  // Optional: Define a delete handler if neede
 
 
   return (
