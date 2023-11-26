@@ -141,6 +141,8 @@ const handleGoBackToOriginal = () => {
   return (
     <main className='grid place-items-center w-screen h-screen'>
    <section className="p-4 md:w-3/6 w-full h-full md:h-auto">
+   <div className='mb-1 text-gray-600'>Antwort</div>
+
         <div className="mb-4 p-2 bg-gray-200 rounded-md flex flex-col justify-between">
             <div className='flex flex-row justify-end'>
               {/* <div className='rounded-full bg-[#7F53FF] h-10 w-10 grid place-items-center p-1'>
@@ -169,12 +171,14 @@ const handleGoBackToOriginal = () => {
                 className='w-full p-2 h-full text-sm bg-transparent border-none outline-none resize-none'
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
-                placeholder='Hier kommt die Antwort, oder deine Stichpunkte'
+                placeholder='Schreibe deine Stichpunkte hier rein'
                 rows={11}
             />
 
         </div>
         <div className="w-full">
+        <div className='mb-1 text-gray-600'>Frage</div>
+
         <ChatBox
             inputValue={question}
             onInputChange={setQuestion}

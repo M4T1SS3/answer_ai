@@ -150,12 +150,12 @@ export default function KnowledgeBase() {
     
 
     return (
-            <main className="w-screen bg-[#fff] pt-16 min-h-screen">
-                <section className="text-center flex flex-col items-center mb-48">
-                <div className="relative inline-block">
-                    <h1 className='text-3xl uppercase relative z-10'>Knowledge Base</h1>
-                    <div className='absolute top-1/2 transform w-full h-6 bg-[#7F53FF] z-0'></div>
-                </div>
+        <main className="w-screen bg-[#fff] pt-16 min-h-screen">
+        <section className="text-center flex flex-col items-center mb-12 sm:mb-48">
+            <div className="relative inline-block">
+                <h1 className='text-2xl sm:text-3xl uppercase relative z-10'>Knowledge Base</h1>
+                <div className='absolute top-1/2 transform w-full h-6 bg-[#7F53FF] z-0'></div>
+            </div>
 
                     <div onClick={() => setOpenForm(!openForm)} className="mt-4 h-12 w-12 bg-black rounded-full grid place-items-center cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -176,14 +176,13 @@ export default function KnowledgeBase() {
                         />
                 
                 )}
-                <div className="w-full flex justify-center">
-                <ul className="flex flex-wrap gap-x-2">
+              <div className="w-full flex justify-center">
+                <ul className="flex flex-col sm:flex-row flex-wrap gap-x-2">
                     {pairs.map((pair, index) => (
-                            <QACard pair={pair} key={index} onEdit={handleEditPair} />
+                        <QACard pair={pair} key={index} onEdit={handleEditPair} />
                     ))}
                 </ul>
-                </div>
-            
+            </div>
 
             </main>
 

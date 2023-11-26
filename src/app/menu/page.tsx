@@ -15,8 +15,7 @@ export default function FeatureMenu() {
    
     return (
         <main className="relative w-screen h-screen grid place-items-center">
-            <section>
-                <ul className="flex flex-row space-x-4 p-6 rounded-md">
+            <ul className="flex flex-col md:flex-row space-y-4 md:space-x-4 md:space-y-0 p-6 rounded-md">
                     <MenuItem
                         href="/knowledge"
                         text="Wissensbank"
@@ -28,7 +27,6 @@ export default function FeatureMenu() {
                         iconPaths="M3 3v18h18V3H3zm3 3h12v12H6V6zm2 2v8h8V8H8z"
                     />
                 </ul>
-            </section>
         </main>
     );
 }

@@ -62,9 +62,9 @@ async function enhanceAnswer(question: string, answer: string, context: any): Pr
     });
     const promptTemplate = new PromptTemplate({
       template: `
-        You are a customer support bot at {organisation_name}, specializing in {activity}.
+        You are helping answering customer messages at {organisation_name}, specializing in {activity}.
         Answer in the language of the question.
-        Answer friendly and concise.
+        Answer friendly. Make sure to be concise.
 
         Customer's question: "{question}"
         My initial response was: "{initialAnswer}"
