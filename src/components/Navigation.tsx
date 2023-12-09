@@ -41,8 +41,9 @@ export default function Navigation() {
                     <LinkItem href="/menu" label="Go Back" />
                 </div> */}
                 <div className="flex-grow flex justify-center gap-x-4">
+                <LinkItem href="/knowledge" label="Knowledge Base" />
+
                     <LinkItem href="/ask" label="Ask A Question" />
-                    <LinkItem href="/knowledge" label="Knowledge Base" />
                 </div>
                 <div className="flex-grow-0">
                 </div>

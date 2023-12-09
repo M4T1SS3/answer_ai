@@ -95,7 +95,6 @@ export default function UploadData({ setDataUploaded }: UploadDataProps) {
         <div className='bg-[#CAB9FD] w-full h-full rounded-xl p-4'>
           <div className='border-dashed border-[#A98BFF] border-2 w-full h-full rounded-lg'></div>
         </div>
-        {/* ... other components ... */}
         <input
           ref={fileInputRef}
           className="hidden"

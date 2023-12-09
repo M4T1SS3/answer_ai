@@ -176,8 +176,8 @@ export default function KnowledgeBase() {
                         />
                 
                 )}
-              <div className="w-full flex justify-center">
-                <ul className="flex flex-col sm:flex-row flex-wrap gap-x-2">
+              <div className="w-full flex justify-center mx-4">
+                <ul className="flex flex-col md:flex-row flex-wrap gap-x-2">
                     {pairs.map((pair, index) => (
                         <QACard pair={pair} key={index} onEdit={handleEditPair} />
                     ))}

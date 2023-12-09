@@ -33,9 +33,8 @@ const QAForm: React.FC<QAFormProps> = ({pair, onSubmit, onGoBack, onDelete }) =>
     
 
     return (
-        <div className=" z-[1000] fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
-
-        <div className='bg-white rounded-md p-4 w-1/2'>
+<div className="z-[1000] fixed top-0 left-0 w-full h-full flex items-center p-2 justify-center bg-black bg-opacity-50">
+    <div className='bg-white rounded-md p-4 w-full h-full md:w-1/3 md:min-w-[600px] md:h-auto'>
             <div className='flex flex-row justify-between'>
                 {pair && onDelete && (
                     <Icon type={IconType.Delete} onClick={() => onDelete(pair)}/>
@@ -44,7 +43,7 @@ const QAForm: React.FC<QAFormProps> = ({pair, onSubmit, onGoBack, onDelete }) =>
                  
             </div>
             <h2 className='text-2xl mt-10 mb-4'>Add Question to Knowledgebase</h2>
-            <form onSubmit={handleSubmit} className=''>
+            <form onSubmit={handleSubmit} className='h-full'>
                 <InputField
                     id="question"
                     label="Question"
