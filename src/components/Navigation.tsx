@@ -36,7 +36,7 @@ function LinkItem({ href, label }: LinkItemType) {
 
 export default function Navigation() {
     return (
-            <nav className="flex items-center justify-between w-full py-4 px-6 bg-purple-100">
+            <nav className="flex items-center justify-between w-full py-4 px-6 bg-blue-100">
                 {/* <div className="flex-grow-0">
                     <LinkItem href="/menu" label="Go Back" />
                 </div> */}

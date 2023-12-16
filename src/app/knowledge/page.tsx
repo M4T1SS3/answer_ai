@@ -150,11 +150,11 @@ export default function KnowledgeBase() {
     
 
     return (
-        <main className="w-screen bg-[#fff] pt-16 min-h-screen">
+        <main className="w-screen  bg-blue-50  pt-16 min-h-screen">
         <section className="text-center flex flex-col items-center mb-12 sm:mb-16">
             <div className="relative inline-block">
-                <h1 className='text-2xl sm:text-3xl uppercase relative z-10'>Knowledge Base</h1>
-                <div className='absolute top-1/2 transform w-full h-6 bg-primary z-0'></div>
+                <h1 className='text-3xl sm:text-4xl uppercase relative z-10'>Knowledge Base</h1>
+                {/* <div className='absolute top-1/2 transform w-full h-6 bg-primary z-0'></div> */}
             </div>
 
                     <div onClick={() => setOpenForm(!openForm)} className="mt-4 h-12 w-12 bg-black rounded-full grid place-items-center cursor-pointer">

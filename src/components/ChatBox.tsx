@@ -30,10 +30,10 @@ const ChatBox: React.FC<SearchBoxProps> = ({ inputValue, onInputChange, onSend, 
   }, []);
 
   return (
-    <div className="flex w-full bg-purple-200 rounded-md p-2">
+    <div className="flex w-full bg-blue-200 rounded-md p-2">
       <textarea
         ref={textareaRef}
-        className="flex-grow p-2 rounded-sm border-0 focus:ring-0 bg-purple-200 text-sm resize-none"
+        className="flex-grow p-2 rounded-sm border-0 focus:ring-0 bg-blue-200 text-sm resize-none"
         style={{ outline: 'none', overflowY: 'hidden' }}
         value={inputValue}
         onChange={(e) => {

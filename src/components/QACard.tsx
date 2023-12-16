@@ -22,7 +22,7 @@ const QACard: React.FC<QACardProps> = ({ pair, onEdit,key }) => {
     };
 
     return (
-        <li key={key} onClick={() => onEdit(pair)} className="bg-purple-200 rounded-lg p-4 my-2 w-60 h-56 relative flex flex-col justify-end cursor-pointer">
+        <li key={key} onClick={() => onEdit(pair)} className="bg-blue-200 rounded-lg p-4 my-2 w-60 h-56 relative flex flex-col justify-end cursor-pointer">
             <button className="absolute top-0 right-0 p-2" onClick={() => onEdit(pair)}>
                 <span>•••</span>
             </button>

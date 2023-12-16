@@ -56,7 +56,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ href, text, iconPaths, iconCircle }
     const translatedText = translationMap[locale][text]; 
     
     return (
-        <li className="bg-purple-200 p-2 w-[216px] h-[336px] rounded-md relative">
+        <li className="bg-blue-200 p-2 w-[216px] h-[336px] rounded-md relative">
             <a href={href} className="grid place-items-end space-x-2 h-full">
                 <div className="absolute top-2 right-2 bg-black p-2 grid place-items-center rounded-full">
                     <svg className="w-6 h-6 text-white" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
