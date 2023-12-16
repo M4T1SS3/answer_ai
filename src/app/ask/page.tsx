@@ -85,7 +85,6 @@ const handleEnhanceAnswer = async () => {
 
   } catch (error) {
       console.error('Error:', error);
-      setAnswer('Sorry, there was an error processing your request.');
   } finally {
       setLoading(false);
   }
@@ -123,7 +122,6 @@ const handleGoBackToOriginal = () => {
         // Show a success message or perform other actions as needed
     } catch (error) {
         console.error('Error while saving to knowledge base:', error);
-        // Handle the error case appropriately
     }
 
     setAnswer("")
@@ -139,11 +137,11 @@ const handleGoBackToOriginal = () => {
 
 
   return (
-    <main className='grid place-items-center w-screen h-screen'>
+    <main className='bg-purple-50 grid place-items-center w-screen h-screen'>
    <section className="p-4 md:w-3/6 w-full h-full md:h-auto">
    <div className='mb-1 text-gray-600'>Antwort</div>
 
-        <div className="mb-4 p-2 bg-gray-200 rounded-md flex flex-col justify-between">
+        <div className="mb-4 p-2 bg-purple-200 rounded-md flex flex-col justify-between">
             <div className='flex flex-row justify-end'>
               {/* <div className='rounded-full bg-[#7F53FF] h-10 w-10 grid place-items-center p-1'>
                 <svg width="100%" height="100%" viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -49,14 +49,14 @@ const QAForm: React.FC<QAFormProps> = ({pair, onSubmit, onGoBack, onDelete }) =>
                     label="Question"
                     value={question}
                     onChange={setQuestion}
-                    row={1}
+                    row={3}
                 />
                 <InputField
                     id="answer"
                     label="Answer"
                     value={answer}
                     onChange={setAnswer}
-                    row={4}
+                    row={5}
                 />
                 <div className="flex justify-end mt-6">
                     <button type="submit" className="bg-black hover:bg-gray-800 text-white font-bold p-2 rounded-lg inline-flex items-center">

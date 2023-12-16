@@ -12,7 +12,7 @@ export default function Home() {
   }, [router]); // Corrected dependency array
 
   return (
-    <main className=" w-screen grid place-items-center">
+    <main className=" w-screen grid place-items-center ">
       {/* <UploadData setDataUploaded={setDataUploaded} /> */}
     </main>
   );
