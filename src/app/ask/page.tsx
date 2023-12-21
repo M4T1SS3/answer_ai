@@ -134,7 +134,7 @@ const handleGoBackToOriginal = () => {
     setIsFormVisible(false); // Hide the form without saving
   };
 
-
+ 
 
   return (
     <main className='bg-blue-50 grid place-items-center w-screen h-screen'>
@@ -151,11 +151,10 @@ const handleGoBackToOriginal = () => {
                 </svg>
                 </div> */}
                 <div className='flex justify-center gap-x-1'>
-                      {enhanced ? (
+                      {(enhanced && answer.trim() !== "")  ? (
                         <Icon type={IconType.GoBack} onClick={handleGoBackToOriginal}/>
-                      ) : (
-                        <Icon type={IconType.Magic} onClick={handleEnhanceAnswer}/>
-                      )}
+                      ):<Icon type={IconType.Magic} onClick={handleEnhanceAnswer}/>} 
+                      
                       <Icon type={IconType.Save} onClick={handleSave}/>
                       {hasCopied ? (
                           <Icon type={IconType.Check}/>
