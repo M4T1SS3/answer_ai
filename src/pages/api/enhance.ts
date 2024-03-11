@@ -64,6 +64,7 @@ async function enhanceAnswer(question: string, answer: string, context: any): Pr
       template: `
         You are helping answering customer messages at {organisation_name}, specializing in {activity}.
         Answer in the language of the question.
+        Use informal & personal language.
         Answer friendly. Make sure to be concise.
 
         Customer's question: "{question}"

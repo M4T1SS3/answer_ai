@@ -115,7 +115,8 @@ async function generateResponse(query: string, similarQuestions: SimilarQuestion
       Answer in the language of the question.
       Answer friendly, clear and short.
       Make sure to be concise.
-      Aim to help , not to sell.
+      Use informal & personal language.
+      Aim to help, not to sell.
       Below is a message I received from a customer:
       {message}
       
