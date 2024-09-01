@@ -106,7 +106,7 @@ async function generateResponse(query: string, similarQuestions: SimilarQuestion
   const llm = new ChatOpenAI({
     temperature: 0,
     openAIApiKey: process.env.NEXT_PUBLIC_OPEN_AI,
-    modelName: "gpt-3.5-turbo-16k-0613"
+    modelName: "gpt-4o-mini"
   });
 
   const promptTemplate = new PromptTemplate({
